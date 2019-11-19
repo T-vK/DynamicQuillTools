@@ -1,0 +1,89 @@
+<html>
+<head>
+  <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.quilljs.com/1.3.7/quill.bubble.css"></link>
+  <link rel="stylesheet" type="text/css" href="https://cdn.quilljs.com/1.3.7/quill.snow.css"></link>
+  <script src="./DynamicQuillTools.js"></script>
+  <!--<script src="https://cdn.jsdelivr.net/gh/T-vK/DynamicQuillTools@master/DynamicQuillTools.js"></script>-->
+</head>
+<body>
+  <div id="editor"></div>
+  <script>
+    // Create a Quill Editor instance with some built-in toolbar tools
+    const quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: {
+                container: [
+                    ['bold', 'italic', 'underline', 'strike'],
+                    ['blockquote', 'code-block'],
+
+                    [{ 'header': 1 }, { 'header': 2 }],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                    [{ 'script': 'sub' }, { 'script': 'super' }],
+                    [{ 'indent': '-1' }, { 'indent': '+1' }],
+                    [{ 'direction': 'rtl' }],
+
+                    [{ 'size': ['small', false, 'large', 'huge'] }],
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+                    [{ 'color': [] }, { 'background': [] }],
+                    [{ 'font': [] }],
+                    [{ 'align': [] }],
+
+                    ['clean'],
+                ]
+            }
+        }
+    })
+
+
+    // Add a custom DropDown Menu to the Quill Editor's toolbar:
+
+    const dropDownItems = {
+        'Mike Smith': 'mike.smith@gmail.com',
+        'Jonathan Dyke': 'jonathan.dyke@yahoo.com',
+        'Max Anderson': 'max.anderson@gmail.com'
+    }
+
+    const myDropDown = new QuillToolbarDropDown({
+        label: "Email Addresses",
+        rememberSelection: false
+    })
+
+    myDropDown.setItems(dropDownItems)
+
+    myDropDown.onSelect = function(label, value, quill) {
+        // Do whatever you want with the new dropdown selection here
+
+        // For example, insert the value of the dropdown selection:
+        const { index, length } = quill.selection.savedRange
+        quill.deleteText(index, length)
+        quill.insertText(index, value)
+        quill.setSelection(index + value.length)
+    }
+
+    myDropDown.attach(quill)
+
+
+    // Add a custom Button to the Quill Editor's toolbar:
+
+    const myButton = new QuillToolbarButton({
+        icon: `<svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"></path></svg>`
+    })
+    myButton.onClick = function(quill) {
+        // Do whatever you want here. You could use this.getValue() or this.setValue() if you wanted.
+
+        // For example, get the selected text and convert it to uppercase:
+        const { index, length } = quill.selection.savedRange
+        const selectedText = quill.getText(index, length)
+        const newText = selectedText.toUpperCase()
+        quill.deleteText(index, length)
+        quill.insertText(index, newText)
+        quill.setSelection(index, newText.length)
+    }
+    myButton.attach(quill)
+
+ </script>
+</body>
+</html>
