@@ -9,7 +9,7 @@ In this screenshot you can see a custom drop down menu and a custom button.
 ![screenshot](./screenshot.png)
 
 ## Live Demo
-https://t-vk.github.io/DynamicQuillTools/
+https://t-vk.github.io/DynamicQuillTools/example.html
 
 ## CDN
 If you prefer CDNs you can include the library on your website like this:
