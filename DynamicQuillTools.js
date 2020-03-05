@@ -223,3 +223,5 @@ class QuillToolbarButton extends QuillToolbarItem {
 
     }
 }
+
+export { QuillToolbarItem, QuillToolbarDropDown, QuillToolbarButton }
