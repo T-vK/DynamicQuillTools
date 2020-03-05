@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timblack-NukeDigital/DynamicQuillTools.git"
+    "url": "git+https://github.com/T-vK/DynamicQuillTools.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/timblack-NukeDigital/DynamicQuillTools/issues"
+    "url": "https://github.com/T-vK/DynamicQuillTools/issues"
   },
-  "homepage": "https://github.com/timblack-NukeDigital/DynamicQuillTools#readme"
+  "homepage": "https://github.com/T-vK/DynamicQuillTools#readme"
 }
