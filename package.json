@@ -1,0 +1,22 @@
+{
+  "name": "dynamicquilltools",
+  "version": "1.0.0",
+  "description": "DynamicQuillTools is a library that allows you to dynamically add or remove new custom elements to/from a Quill Editor's toolbar. For instance a button or a drop down menu.",
+  "main": "DynamicQuillTools.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timblack-NukeDigital/DynamicQuillTools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timblack-NukeDigital/DynamicQuillTools/issues"
+  },
+  "homepage": "https://github.com/timblack-NukeDigital/DynamicQuillTools#readme"
+}
