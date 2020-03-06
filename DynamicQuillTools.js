@@ -91,7 +91,7 @@ class QuillToolbarDropDown extends QuillToolbarItem {
             qlPicker.classList.toggle('ql-expanded')
 
         })
-        window.addEventListener('click', function(e){
+        qlPicker.addEventListener('click', function(e){
             if (!qlPicker.contains(e.target)){
                 qlPicker.classList.remove('ql-expanded')
             }
